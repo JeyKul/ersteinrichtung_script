@@ -1,6 +1,7 @@
 # Import the function (adjust the path according to your setup)
-. "./POWERSHELL/EXT/Install-WinUtilWinget.ps1"
-. "./POWERSHELL/EXT/Test-WinUtilPackageManager.ps1"
+. "$PSscriptPath/EXT/Install-WinUtilWinget.ps1"
+. "$PSscriptPath/EXT/Test-WinUtilPackageManager.ps1"
+
 
 # Set up Information stream to be visible
 $InformationPreference = "Continue"
