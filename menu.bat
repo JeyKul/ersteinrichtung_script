@@ -7,4 +7,4 @@ if %errorlevel% neq 0 (
     exit /b
 )
 
-powershell -ExecutionPolicy Bypass -File "%~dp0POWERSHELL\MENU.ps1"
+powershell -ExecutionPolicy Bypass -File "%~dp0POWERSHELL\Menu-Main.ps1"
