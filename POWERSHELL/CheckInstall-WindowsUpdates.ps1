@@ -1,6 +1,21 @@
-Set-Location -Path $PSScriptRoot\..
+# Go up one directory
+Set-Location -Path "$PSScriptRoot\.."
 
-POWERSHELL\EXT\NXTUpdateManager.exe -s -v -r -p
-sleep 3
-echo $pwd
-POWERSHELL\EXT\NXTUpdateManager.exe -s -v -r -p
+# Detect system architecture
+$arch = $env:PROCESSOR_ARCHITECTURE
+
+if ($arch -eq "AMD64") {
+    $exe = "POWERSHELL\EXT\NXTUpdateManager_AMD64.exe"
+}
+elseif ($arch -eq "ARM64") {
+    $exe = "POWERSHELL\EXT\NXTUpdateManager_ARM64.exe"
+}
+else {
+    Write-Error "Unsupported architecture: $arch"
+    exit 1
+}
+
+# Run the updater twice with a delay
+& $exe -s -v -r -p
+Start-Sleep -Seconds 3
+& $exe -s -v -r -p
