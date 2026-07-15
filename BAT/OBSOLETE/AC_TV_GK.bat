@@ -1,1 +1,0 @@
-".\GK\TVHOST.exe" /S

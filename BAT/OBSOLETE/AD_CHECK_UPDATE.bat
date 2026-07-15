@@ -1,1 +1,0 @@
-.\NXTUpdateManager.exe -s -r -v -p
